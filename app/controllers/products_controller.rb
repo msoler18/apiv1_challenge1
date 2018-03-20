@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def create  
     product = Product.new(product_params)
     if product.save
-      render json: product, status: 201, location: [:api, product]
+      render json: product, status: 201
     else
       render json: { errors: product.errors }, status: 422  
     end  
